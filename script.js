@@ -2,7 +2,7 @@ $(".boxs").mouseenter(function(e) {
     const id = e.target.id;
    
     /* I wrote this code based on https://letsbuildui.dev/articles/a-3d-hover-effect-using-css-transforms */
-    const box = document.getElementById(id);
+    const box = document.querySelector(`#${id}`);
     const THRESHOLD = 10;
 
     function handleHover(e) { 
