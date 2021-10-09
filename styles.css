@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+}
+
+html, body {
+    height: 100%;
+    background-color: hsl(210, 46%, 95%);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-areas:
+        "b1 b1 b2 b3"
+        "b4 b5 b5 b3";
+    grid-template-columns: .3fr .42fr .3fr .3fr;
+    gap: 2em;
+    margin: 20px;
+    padding: 20px;
+    width: 90VW;
+}
+
+.boxs {
+    display: grid;
+    grid-template-areas: 
+        "ci"
+        "mt"
+        "st";
+    grid-template-rows: .3fr .2fr auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 1px 5px 25px 0px rgba(172, 172, 172, 0.44);
+    transform-style: preserve-3d;
+    transition: 0.1s ease;
+}
+
+#b1 {
+    grid-area: b1;
+    background-color: hsl(263, 55%, 52%);
+    position: relative;
+}
+
+#b2 {
+    grid-area: b2;
+    background-color: hsl(217, 19%, 35%);
+}
+
+#b3 {
+    grid-area: b3;
+    background-color: hsl(0, 0%, 100%);
+}
+
+#b4 {
+    grid-area: b4;
+    background-color: hsl(0, 0%, 100%);
+}  
+
+#b5 {
+    grid-area: b5;
+    background-color: hsl(219, 29%, 14%);
+}
+
+.card-info {
+    display: grid;
+    grid-template-areas: 
+        "img name"
+        "img title";
+    grid-template-columns: auto 1fr;
+    gap: .1em 2em;
+    margin-bottom: 2em;
+    grid-area: ci;
+}
+
+img {
+    border-radius: 50%;
+    grid-area: img;
+    align-self: center;
+}
+
+.name {
+    grid-area: name;
+    justify-self: flex-start;
+    align-self: flex-end;
+    color: hsl(0, 0%, 90%);
+    font-weight: 600;
+}
+
+.title {
+    grid-area: title;
+    align-self: flex-start;
+    color: hsl(0, 0%, 90%, 50%);
+    font-weight: 500;
+    z-index: 1;
+}
+
+
+.main-txt {
+    color: hsl(0, 0%, 90%);
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    grid-area: mt;
+    z-index: 1;
+    line-height: 1.4em;
+    padding-right: 1.5em;
+}
+
+.sub-txt {
+    color: hsl(0, 0%, 90%, 70%);
+    font-weight: 500;
+    align-self: flex-start;
+    grid-area: st;
+    line-height: 1.6em;
+    padding-right: 1.5em;
+}
+
+
+
+.dark {
+    color: hsl(210, 46%, 20%);
+}
+
+.dark-50 {
+    color: hsl(210, 46%, 20%, 50%);
+}
+
+.dark-70 {
+    color: hsl(210, 46%, 20%, 70%);
+}
+
+
+.quotation-pattern {
+    border-radius: 0%;
+    position: absolute;
+    top: 0%;
+    right: 15%;
+    z-index: 0;
+}
+
+
+@media screen and (max-width: 771px) {
+    .container {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        transform: translate(0, 0);
+        width: 100vw;
+        margin: 0;
+    }
+
+    .boxs {
+        display: flex;
+        flex-direction: column;
+    }
+}
